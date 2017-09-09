@@ -140,4 +140,8 @@
     <!-- Tiles on secure keyguard -->
     <string name="qs_lock_screen_secure_title">Require unlocking to use qs tiles</string>
     <string name="qs_lock_screen_secure_summary">Ask to unlock lockscreen when using qs tiles</string>
+
+    <!-- Double tap-to-sleep -->
+    <string name="double_tap_to_sleep_title">Double-tap on status bar to sleep</string>
+    <string name="double_tap_to_sleep_summary">Double-tap status bar to put the device to sleep</string>
 </resources>
