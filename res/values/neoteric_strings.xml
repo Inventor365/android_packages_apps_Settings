@@ -79,4 +79,8 @@
     <string name="battery_share_limit_title">Stop sharing battery when device reaches:</string>
     <string name="battery_share_state_on">On</string>
     <string name="battery_share_state_off">Off</string>
+
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Swipe to screenshot</string>
+    <string name="three_finger_gesture_summary">Swipe down with three fingers to take a screenshot</string>
 </resources>
