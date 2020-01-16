@@ -30,15 +30,11 @@ public class BasebandVersionPreferenceController extends BasePreferenceControlle
 
     @VisibleForTesting
     static final String BASEBAND_PROPERTY = "gsm.version.baseband";
-// QTI_BEGIN: 2019-12-17: Android_UI: Settings: support CT chipset PA requirement
     private final Context mContext;
-// QTI_END: 2019-12-17: Android_UI: Settings: support CT chipset PA requirement
 
     public BasebandVersionPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
-// QTI_BEGIN: 2019-12-17: Android_UI: Settings: support CT chipset PA requirement
         mContext = context;
-// QTI_END: 2019-12-17: Android_UI: Settings: support CT chipset PA requirement
     }
 
     @Override
@@ -49,20 +45,15 @@ public class BasebandVersionPreferenceController extends BasePreferenceControlle
 
     @Override
     public CharSequence getSummary() {
-// QTI_BEGIN: 2019-12-17: Android_UI: Settings: support CT chipset PA requirement
-        if (Utils.isSupportCTPA(mContext.getApplicationContext())) {
-            String baseBands = SystemProperties.get(BASEBAND_PROPERTY,
-                    mContext.getString(R.string.device_info_default));
-            if (null != baseBands) {
-                String[] baseBandArray = baseBands.split(",");
-                if ((baseBandArray != null) && (baseBandArray.length > 0)) {
-                    return baseBandArray[0];
-                }
+        String baseBands = SystemProperties.get(BASEBAND_PROPERTY,
+                mContext.getString(R.string.device_info_default));
+        if (baseBands != null) {
+            String[] baseBandArray = baseBands.split(",");
+            if (baseBandArray != null && baseBandArray.length > 0) {
+                return baseBandArray[0];
             }
         }
-// QTI_END: 2019-12-17: Android_UI: Settings: support CT chipset PA requirement
-        return SystemProperties.get(BASEBAND_PROPERTY,
-                mContext.getString(R.string.device_info_default));
+        return baseBands;
     }
 }
 // LINT.ThenChange(BasebandVersionPreference.kt)
