@@ -123,6 +123,7 @@ abstract class BaseDarkModeScreen(context: Context, val isUiOnly: Boolean) :
                         val modeStorage = DarkThemeModeStorage(context)
                         +StandardDarkModeSelectorPreference(modeStorage, isUiOnly)
                         +ExpandedDarkModeSelectorPreference(modeStorage, isUiOnly)
+                        +DarkModeBlackThemePreference(context, darkModeStorage)
                     }
             }
             +PreferenceCategory(

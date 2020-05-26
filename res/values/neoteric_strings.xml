@@ -100,4 +100,8 @@
     <!-- Three-fingers screenshot on ambient -->
     <string name="three_finger_ambient_title">Swipe to screenshot on Ambient Display</string>
     <string name="three_finger_ambient_summary">Swipe three fingers to take screenshot even on Ambient Display</string>
+
+    <!-- Black theme -->
+    <string name="berry_black_theme_title">Use Black theme</string>
+    <string name="berry_black_theme_summary">Force black background colors</string>
 </resources>
