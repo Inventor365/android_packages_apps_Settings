@@ -4,4 +4,18 @@
     <!-- Power share thresholds -->
     <integer name="config_minPowerShareThreshold">10</integer>
     <integer name="config_maxPowerShareThreshold">50</integer>
+
+    <!-- List of system apps that are allowed to configure heads up settings -->
+    <string-array name="config_headsUpConfAllowedSystemApps" translatable="false">
+        <item>com.android.chrome</item>
+        <item>com.android.vending</item>
+        <item>com.oneplus.gallery</item>
+        <item>com.google.android.apps.docs</item>
+        <item>com.google.android.apps.nbu.files</item>
+        <item>com.google.android.apps.photos</item>
+        <item>com.google.android.apps.recorder</item>
+        <item>com.google.android.calendar</item>
+        <item>com.google.android.gm</item>
+        <item>com.google.android.googlequicksearchbox</item>
+    </string-array>
 </resources>
