@@ -162,6 +162,7 @@ import com.android.settings.network.tether.TetherSettings;
 import com.android.settings.notification.BubbleNotificationSettings;
 import com.android.settings.notification.BundlePreferenceFragment;
 import com.android.settings.notification.ConfigureNotificationSettings;
+import com.android.settings.notification.HeadsUpSettings;
 import com.android.settings.notification.LockScreenNotificationsPreferencePageFragment;
 import com.android.settings.notification.NotificationAccessSettings;
 import com.android.settings.notification.NotificationAssistantPicker;
@@ -436,6 +437,7 @@ public class SettingsGateway {
             SafetyCenterFragment.class.getName(),
             SafetyCenterQsFragment.class.getName(),
             BatteryShareSettings.class.getName(),
+            HeadsUpSettings.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -484,5 +486,6 @@ public class SettingsGateway {
             Settings.NavigationModeSettingsActivity.class.getName(),
             Settings.ShadeSettingsActivity.class.getName(),
             Settings.BatteryShareSettingsActivity.class.getName(),
+            Settings.HeadsUpSettingsActivity.class.getName(),
     };
 }
