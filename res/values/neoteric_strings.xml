@@ -289,4 +289,8 @@
     <string name="dc_dimming_info">Reduces eye strain in low light conditions by minimizing screen flicker. May result in reduced image quality and poor color production, or higher power consumption.</string>
     <string name="dc_dimming_main_switch_title">Use DC Dimming</string>
     <string name="keywords_display_dc_dimming">dc dimming, anti, flicker, eye, strain</string>
+
+    <!-- Enforce DNS for VPN -->
+    <string name="vpn_enforce_dns_title">Disable for VPN</string>
+    <string name="vpn_enforce_dns_summary">Disable the private DNS when connected to a VPN. It will restore upon disconnecting.</string>
 </resources>
