@@ -133,20 +133,13 @@
             <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
         </Preference>
 
-        <org.neoteric.preference.SecureSettingSwitchPreference
+        <com.android.settingslib.PrimarySwitchPreference
             android:key="qs_show_data_usage"
-            android:title="@string/qs_show_data_usage_title"
+            android:title="@string/qs_data_usage_title"
             android:summary="@string/qs_show_data_usage_summary"
-            android:defaultValue="true" />
-
-        <org.neoteric.preference.SecureSettingListPreference
-            android:key="qs_data_usage_cycle_type"
-            android:dependency="qs_show_data_usage"
-            android:title="@string/qs_data_usage_cycle_type_title"
-            android:summary="@string/qs_data_usage_cycle_type_summary"
-            android:entries="@array/qs_data_usage_cycle_type_entries"
-            android:entryValues="@array/qs_data_usage_cycle_type_values"
-            android:defaultValue="0" />
+            android:defaultValue="true"
+            android:fragment="com.android.settings.display.QSDataUsageSettings" 
+            settings:controller="com.android.settings.display.QSDataUsagePreferenceController" />
     </PreferenceCategory>
 
     <PreferenceCategory
