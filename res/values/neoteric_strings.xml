@@ -386,4 +386,8 @@
     <!-- Units -->
     <string name="unit_seconds">sec</string>
     <string name="unit_ms">ms</string>
+
+    <!-- Media art -->
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Display media cover art when available</string>
 </resources>
