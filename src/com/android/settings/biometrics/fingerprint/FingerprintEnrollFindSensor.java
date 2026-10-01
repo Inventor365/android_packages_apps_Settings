@@ -50,6 +50,7 @@ import com.android.systemui.unfold.updates.FoldProvider;
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.setupcompat.template.FooterBarMixin;
 import com.google.android.setupcompat.template.FooterButton;
+import com.google.android.setupdesign.util.ThemeHelper;
 
 import java.util.List;
 
@@ -128,6 +129,8 @@ public class FingerprintEnrollFindSensor extends BiometricEnrollBase implements
             AccessibilityManager am = getSystemService(AccessibilityManager.class);
             if (am.isEnabled()) {
                 mIllustrationLottie.setAnimation(R.raw.udfps_edu_a11y_lottie);
+            } else if (ThemeHelper.shouldApplyGlifExpressiveStyle(this)) {
+                mIllustrationLottie.setAnimation(R.raw.fingerprint_udfps_edu_lottie_expressive);
             }
         } else if (mCanAssumeSfps) {
             setHeaderText(R.string.security_settings_sfps_enroll_find_sensor_title);

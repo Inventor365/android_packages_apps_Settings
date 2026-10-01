@@ -759,6 +759,9 @@ public class FingerprintEnrollEnrolling extends BiometricsEnrollEnrolling {
         if (!mCanAssumeSfps) {
             setDescriptionText("");
         }
+        if (mExpressiveThemeEnabled) {
+            lottie = BiometricUtils.toExpressiveUdfpsLottie(lottie);
+        }
         LottieCompositionFactory.fromRawRes(this, lottie)
                 .addListener((c) -> onLottieComposition(mIllustrationLottie, c));
     }

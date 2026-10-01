@@ -33,6 +33,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieCompositionFactory
 import com.android.settings.R
+import com.android.settings.biometrics.BiometricUtils
 import com.android.settings.biometrics.fingerprint2.data.model.EnrollStageModel
 import com.android.settings.biometrics.fingerprint2.lib.model.FingerEnrollState
 import com.android.settings.biometrics.fingerprint2.ui.enrollment.modules.enrolling.common.util.toFingerprintEnrollOptions
@@ -43,6 +44,7 @@ import com.android.settings.biometrics.fingerprint2.ui.enrollment.modules.enroll
 import com.android.settings.biometrics.fingerprint2.ui.enrollment.modules.enrolling.udfps.ui.viewmodel.UdfpsViewModel
 import com.android.settings.biometrics.fingerprint2.ui.enrollment.modules.enrolling.udfps.ui.widget.UdfpsEnrollViewV2
 import com.google.android.setupdesign.GlifLayout
+import com.google.android.setupdesign.util.ThemeHelper
 import kotlinx.coroutines.launch
 
 /** This fragment is responsible for showing the udfps Enrollment UI. */
@@ -292,13 +294,19 @@ class UdfpsEnrollFragment() : Fragment(R.layout.fingerprint_v2_udfps_enroll_enro
   }
 
   private fun EducationAnimationModel.toResource(): Int? {
-    return when (this.enrollStageModel) {
-      EnrollStageModel.Center,
-      EnrollStageModel.Guided -> R.raw.udfps_center_hint_lottie
-      EnrollStageModel.Fingertip -> R.raw.udfps_tip_hint_lottie
-      EnrollStageModel.LeftEdge -> R.raw.udfps_left_edge_hint_lottie
-      EnrollStageModel.RightEdge -> R.raw.udfps_right_edge_hint_lottie
-      EnrollStageModel.Unknown -> null
+    val res =
+      when (this.enrollStageModel) {
+        EnrollStageModel.Center,
+        EnrollStageModel.Guided -> R.raw.udfps_center_hint_lottie
+        EnrollStageModel.Fingertip -> R.raw.udfps_tip_hint_lottie
+        EnrollStageModel.LeftEdge -> R.raw.udfps_left_edge_hint_lottie
+        EnrollStageModel.RightEdge -> R.raw.udfps_right_edge_hint_lottie
+        EnrollStageModel.Unknown -> null
+      }
+    return if (res != null && ThemeHelper.shouldApplyGlifExpressiveStyle(requireContext())) {
+      BiometricUtils.toExpressiveUdfpsLottie(res)
+    } else {
+      res
     }
   }
 

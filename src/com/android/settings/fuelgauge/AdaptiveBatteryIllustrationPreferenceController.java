@@ -24,7 +24,6 @@ import androidx.preference.Preference;
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 import com.android.settingslib.widget.IllustrationPreference;
-import com.android.settingslib.widget.SettingsThemeHelper;
 
 public class AdaptiveBatteryIllustrationPreferenceController extends BasePreferenceController {
     private static final String TAG = "AdaptiveBatteryIllustrationPreferenceController";
@@ -42,10 +41,8 @@ public class AdaptiveBatteryIllustrationPreferenceController extends BasePrefere
     @Override
     public void updateState(Preference preference) {
         super.updateState(preference);
-        if (SettingsThemeHelper.isExpressiveTheme(mContext)) {
-            final IllustrationPreference illustration = (IllustrationPreference) preference;
-            illustration.setLottieAnimationResId(R.raw.auto_awesome_battery_expressive_lottie);
-            illustration.applyDynamicColor();
-        }
+        final IllustrationPreference illustration = (IllustrationPreference) preference;
+        illustration.setLottieAnimationResId(R.raw.lottie_adaptive_battery);
+        illustration.applyDynamicColor();
     }
 }

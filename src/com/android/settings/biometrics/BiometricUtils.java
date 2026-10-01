@@ -628,4 +628,18 @@ public class BiometricUtils {
         final float scaledSensorY = location.sensorLocationY * scaleFactor;
         return (scaledSensorY / naturalHeight) >= 0.75f;
     }
+
+    /** Maps a UDFPS enrollment lottie to its expressive variant, if there is one. */
+    public static int toExpressiveUdfpsLottie(int lottie) {
+        if (lottie == R.raw.udfps_center_hint_lottie) {
+            return R.raw.udfps_center_hint_lottie_expressive;
+        } else if (lottie == R.raw.udfps_tip_hint_lottie) {
+            return R.raw.udfps_tip_hint_lottie_expressive;
+        } else if (lottie == R.raw.udfps_left_edge_hint_lottie) {
+            return R.raw.udfps_left_edge_hint_lottie_expressive;
+        } else if (lottie == R.raw.udfps_right_edge_hint_lottie) {
+            return R.raw.udfps_right_edge_hint_lottie_expressive;
+        }
+        return lottie;
+    }
 }

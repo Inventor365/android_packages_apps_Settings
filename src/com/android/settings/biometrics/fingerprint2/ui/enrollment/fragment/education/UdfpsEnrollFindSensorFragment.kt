@@ -37,6 +37,7 @@ import com.android.settings.biometrics.fingerprint2.ui.enrollment.viewmodel.Fing
 import com.google.android.setupcompat.template.FooterBarMixin
 import com.google.android.setupcompat.template.FooterButton
 import com.google.android.setupdesign.GlifLayout
+import com.google.android.setupdesign.util.ThemeHelper
 import kotlinx.coroutines.launch
 
 /**
@@ -87,7 +88,13 @@ class UdfpsEnrollFindSensorFragment() : Fragment() {
     lifecycleScope.launch {
       viewModel.udfpsLottieInfo.collect { isAccessibilityEnabled ->
         val lottieAnimation =
-          if (isAccessibilityEnabled) R.raw.udfps_edu_a11y_lottie else R.raw.udfps_edu_lottie
+          if (isAccessibilityEnabled) {
+            R.raw.udfps_edu_a11y_lottie
+          } else if (ThemeHelper.shouldApplyGlifExpressiveStyle(requireContext())) {
+            R.raw.fingerprint_udfps_edu_lottie_expressive
+          } else {
+            R.raw.udfps_edu_lottie
+          }
         setupLottie(view, lottieAnimation) { viewModel.proceedToEnrolling() }
       }
     }
