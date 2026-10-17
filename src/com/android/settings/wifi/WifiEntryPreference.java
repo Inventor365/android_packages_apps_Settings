@@ -86,10 +86,7 @@ public class WifiEntryPreference extends RestrictedPreference implements
         super(context);
 
 // QTI_BEGIN: 2024-06-10: WLAN: Settings: Adding control to wifi standard display feature.
-        if (sIsWifiStandardDisplaySupported == null) {
-            sIsWifiStandardDisplaySupported = context.getResources().getBoolean(
-                    R.bool.config_show_wifi_standard);
-        }
+        sIsWifiStandardDisplaySupported = Utils.isWifiStandardSupported(context);
 // QTI_END: 2024-06-10: WLAN: Settings: Adding control to wifi standard display feature.
         int layoutResId = SettingsThemeHelper.isExpressiveTheme(getContext())
                 ? R.layout.preference_access_point_expressive : R.layout.preference_access_point;
@@ -213,6 +210,7 @@ public class WifiEntryPreference extends RestrictedPreference implements
                 mShowX = mWifiEntry.shouldShowXLevelIcon();
 // QTI_END: 2024-09-12: WConnect/WLAN_3RDPARTY_GOOGLE: Settings: WiFi icon change for Saved Networks.
 // QTI_BEGIN: 2024-06-10: WLAN: Settings: Adding control to wifi standard display feature.
+                sIsWifiStandardDisplaySupported = Utils.isWifiStandardSupported(getContext());
                 updateIcon(mShowX, mLevel, sIsWifiStandardDisplaySupported ? mWifiStandard : 0);
 // QTI_END: 2024-06-10: WLAN: Settings: Adding control to wifi standard display feature.
 // QTI_BEGIN: 2024-04-13: WLAN: Wifi: Use WifiEntryPreferece from Settings implementation.
