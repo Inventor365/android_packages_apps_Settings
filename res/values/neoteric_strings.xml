@@ -7,6 +7,7 @@
 
     <!-- Neoteric OS version -->
     <string name="neoteric_version">Neoteric OS</string>
+    <string name="neoteric_maintainer">Maintainer</string>
 
     <!-- aptX Settings -->
     <string name="connected_device_codec_preference">Qualcomm® aptX™ preferences</string>
