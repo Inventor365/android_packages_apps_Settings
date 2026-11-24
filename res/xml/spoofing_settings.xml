@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Neoteric OS
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="spoofing_settings"
+    android:title="@string/spoof_settings_title">
+
+    <!-- Integrity & Attestation Category -->
+    <PreferenceCategory
+        android:key="system_spoof_category"
+        android:title="@string/system_spoof_category_title">
+
+        <Preference
+            android:key="play_integrity_fix"
+            android:title="@string/play_integrity_fix_title"
+            android:summary="@string/play_integrity_fix_summary"
+            android:fragment="com.android.settings.custom.spoofing.PlayIntegrityFix" />
+
+        <Preference
+            android:key="tricky_store"
+            android:title="@string/tricky_store_title"
+            android:summary="@string/tricky_store_summary"
+            android:fragment="com.android.settings.custom.spoofing.TrickyStore" />
+
+    </PreferenceCategory>
+
+    <!-- Device & Feature Spoofing Category -->
+    <PreferenceCategory
+        android:key="spoofing_features_category"
+        android:title="@string/spoofing_features_category">
+
+        <Preference
+            android:key="pixel_props"
+            android:title="@string/spoofing_pixel_props_title"
+            android:summary="@string/spoofing_pixel_props_summary"
+            android:fragment="com.android.settings.custom.spoofing.PixelPropsSettings" />
+
+        <Preference
+            android:key="tensor_spoof"
+            android:title="@string/tensor_spoof_title"
+            android:summary="@string/tensor_spoof_summary"
+            android:fragment="com.android.settings.custom.spoofing.TensorTargetsSettings" />
+
+        <org.neoteric.preference.SecureSettingSwitchPreference
+            android:key="pi_photos_spoof"
+            android:title="@string/spoofing_photos_title"
+            android:summary="@string/spoofing_photos_summary"
+            android:defaultValue="false" />
+
+        <org.neoteric.preference.SecureSettingSwitchPreference
+            android:key="pi_snapchat_spoof"
+            android:title="@string/spoofing_snap_title"
+            android:summary="@string/spoofing_snap_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <!-- Hardware & App Spoofing Category -->
+    <PreferenceCategory
+        android:key="app_spoof_category"
+        android:title="@string/hardware_spoof_category_title">
+
+        <Preference
+            android:key="game_spoofing"
+            android:title="@string/game_spoofing_title"
+            android:summary="@string/game_spoofing_summary"
+            android:fragment="com.android.settings.custom.spoofing.GameSpoofing" />
+
+        <Preference
+            android:key="user_selectable_app_spoofing"
+            android:title="@string/user_selectable_app_spoofing_title"
+            android:summary="@string/user_selectable_app_spoofing_summary"
+            android:fragment="com.android.settings.system.spoofing.UserSelectedAppSpoofSettings" />
+
+        <Preference
+            android:key="advanced_app_spoofing"
+            android:title="@string/advanced_app_spoof_title"
+            android:summary="@string/advanced_app_spoof_summary"
+            android:fragment="com.android.settings.system.spoofing.AdvancedAppSpoofSettings" />
+
+    </PreferenceCategory>
+
+    <!-- System & Privacy Category -->
+    <PreferenceCategory
+        android:key="system_tweaks_category"
+        android:title="@string/system_tweaks_category_title">
+
+        <org.neoteric.preference.SecureSettingSwitchPreference
+            android:key="window_ignore_secure"
+            android:title="@string/window_ignore_secure_title"
+            android:summary="@string/window_ignore_secure_summary"
+            android:defaultValue="false" />
+
+        <org.neoteric.preference.SecureSettingSwitchPreference
+            android:key="hide_screen_capture_status"
+            android:title="@string/hide_screen_capture_status_title"
+            android:summary="@string/hide_screen_capture_status_summary"
+            android:defaultValue="false" />
+
+        <Preference
+            android:key="hide_developer_status_settings"
+            android:title="@string/hide_developer_status_title"
+            android:summary="@string/hide_developer_status_summary"
+            android:fragment="com.android.settings.security.HideDeveloperStatusSettings"
+            settings:controller="com.android.settings.security.HideDeveloperStatusPreferenceController" />
+
+        <Preference
+            android:key="hide_applist_setting"
+            android:title="@string/hide_applist_title"
+            android:summary="@string/hide_applist_summary"
+            android:fragment="com.android.settings.security.HideAppListSettings" />
+
+        <Preference
+            android:key="spoofing_reset_defaults"
+            android:title="@string/spoofing_reset_defaults_title"
+            android:summary="@string/spoofing_reset_defaults_summary" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
