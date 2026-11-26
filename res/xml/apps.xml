@@ -48,12 +48,12 @@
     </PreferenceCategory>
 
     <com.android.settingslib.widget.CardPreference
-        android:key="spoofing_settings"
-        android:title="@string/spoof_settings_title"
-        android:summary="@string/spoof_settings_summary"
-        android:icon="@drawable/ic_spoof_settings"
+        android:key="yukiverse_settings"
+        android:title="@string/yukiverse_title"
+        android:summary="@string/yukiverse_summary"
+        android:icon="@drawable/ic_yukiverse"
         android:order="-997"
-        android:fragment="com.android.settings.custom.spoofing.SpoofingSettings" />
+        android:fragment="com.android.settings.custom.yukiverse.YukiVerseSettings" />
 
     <PreferenceCategory
         android:key="general_category"

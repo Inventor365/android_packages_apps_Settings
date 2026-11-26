@@ -23,7 +23,7 @@
 
     <!-- Ignore secure flag -->
     <string name="window_ignore_secure_title">Ignore window secure flags</string>
-    <string name="window_ignore_secure_summary">Remove screenshot / screenrecord limits for all applications</string>
+    <string name="window_ignore_secure_summary">Remove restrictions on screenshots and screen recordings for all applications, potentially risking privacy leaks</string>
 
     <!-- Hide screen capture status -->
     <string name="hide_screen_capture_status_title">Hide screen capture status</string>
@@ -391,4 +391,16 @@
     <!-- Media art -->
     <string name="media_art_title">Media cover art</string>
     <string name="media_art_summary">Display media cover art when available</string>
+
+    <!-- YukiVerse -->
+    <string name="yukiverse_title">YukiVerse</string>
+    <string name="yukiverse_summary">Spoofing, privacy &amp; system tweaks</string>
+    <string name="yukiverse_system_title">System</string>
+    <string name="yukiverse_system_summary">Screen capture, secure windows, app downgrade &amp; PairIP</string>
+    <string name="yukiverse_privacy_category_title">Screen &amp; privacy</string>
+    <string name="yukiverse_apps_category_title">Apps &amp; licensing</string>
+    <string name="app_downgrade_title">Allow app downgrade</string>
+    <string name="app_downgrade_summary">Allow installing older versions of applications. Note that this may lead to crashes and data corruption.</string>
+    <string name="pairip_activity_block_title">Block PairIP license verification</string>
+    <string name="pairip_activity_block_summary">Prevent Play Store apps from launching the \"Get this app from Play\" screen when not installed by the Play Store</string>
 </resources>

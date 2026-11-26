@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Neoteric OS
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="yukiverse_settings"
+    android:title="@string/yukiverse_title">
+
+    <com.android.settingslib.widget.CardPreference
+        android:key="spoofing_settings"
+        android:title="@string/spoof_settings_title"
+        android:summary="@string/spoof_settings_summary"
+        android:icon="@drawable/ic_spoof_settings"
+        android:order="1"
+        android:fragment="com.android.settings.custom.spoofing.SpoofingSettings" />
+
+    <com.android.settingslib.widget.CardPreference
+        android:key="yukiverse_system_settings"
+        android:title="@string/yukiverse_system_title"
+        android:summary="@string/yukiverse_system_summary"
+        android:icon="@drawable/ic_yukiverse_system"
+        android:order="2"
+        android:fragment="com.android.settings.custom.yukiverse.YukiVerseSystemSettings" />
+
+</PreferenceScreen>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Neoteric OS
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="yukiverse_system_settings"
+    android:title="@string/yukiverse_system_title">
+
+    <PreferenceCategory
+        android:key="yukiverse_privacy_category"
+        android:title="@string/yukiverse_privacy_category_title">
+
+        <!-- Hide screen capture status -->
+        <org.neoteric.preference.GlobalSettingSwitchPreference
+            android:key="hide_screen_capture_status"
+            android:title="@string/hide_screen_capture_status_title"
+            android:summary="@string/hide_screen_capture_status_summary"
+            android:defaultValue="false" />
+
+        <!-- Ignore window secure flags -->
+        <org.neoteric.preference.GlobalSettingSwitchPreference
+            android:key="window_ignore_secure"
+            android:title="@string/window_ignore_secure_title"
+            android:summary="@string/window_ignore_secure_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="yukiverse_apps_category"
+        android:title="@string/yukiverse_apps_category_title">
+
+        <!-- Application downgrade -->
+        <org.neoteric.preference.GlobalSettingSwitchPreference
+            android:key="pm_downgrade_allowed"
+            android:title="@string/app_downgrade_title"
+            android:summary="@string/app_downgrade_summary"
+            android:defaultValue="false" />
+
+        <!-- Block PairIP license verification -->
+        <org.neoteric.preference.SystemPropertySwitchPreference
+            android:key="persist.sys.pairip.activity.block"
+            android:title="@string/pairip_activity_block_title"
+            android:summary="@string/pairip_activity_block_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
