@@ -85,6 +85,8 @@ public class SettingsBaseActivity extends FragmentActivity implements CategoryHa
 
     private CollapsingToolbarDelegate mToolbarDelegate;
 
+    private com.android.settings.custom.yukiverse.SettingsGlassHelper mSettingsGlassHelper;
+
     @Override
     public CategoryMixin getCategoryMixin() {
         return mCategoryMixin;
@@ -173,6 +175,9 @@ public class SettingsBaseActivity extends FragmentActivity implements CategoryHa
         if (DEBUG_TIMING) {
             Log.d(TAG, "onCreate took " + (System.currentTimeMillis() - startTime) + " ms");
         }
+        mSettingsGlassHelper =
+                new com.android.settings.custom.yukiverse.SettingsGlassHelper(this);
+        mSettingsGlassHelper.onCreate();
     }
 
     @Override
@@ -206,6 +211,22 @@ public class SettingsBaseActivity extends FragmentActivity implements CategoryHa
                     com.google.android.setupdesign.R.anim.sud_stay, android.R.anim.fade_out);
         }
         super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        if (mSettingsGlassHelper != null) {
+            mSettingsGlassHelper.onResume();
+        }
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mSettingsGlassHelper != null) {
+            mSettingsGlassHelper.onDestroy();
+        }
+        super.onDestroy();
     }
 
     @Override

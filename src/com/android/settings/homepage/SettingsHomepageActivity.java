@@ -112,6 +112,7 @@ public class SettingsHomepageActivity extends FragmentActivity implements
     private View mHomepageView;
     private View mSuggestionView;
     private CategoryMixin mCategoryMixin;
+    private com.android.settings.custom.yukiverse.SettingsGlassHelper mSettingsGlassHelper;
     private Set<HomepageLoadedListener> mLoadedListeners;
     private boolean mIsEmbeddingActivityEnabled;
     private boolean mIsTwoPane;
@@ -302,6 +303,9 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         updateSplitLayout();
 
         enableTaskLocaleOverride();
+        mSettingsGlassHelper =
+                new com.android.settings.custom.yukiverse.SettingsGlassHelper(this);
+        mSettingsGlassHelper.onCreate();
     }
 
     @VisibleForTesting
@@ -330,6 +334,22 @@ public class SettingsHomepageActivity extends FragmentActivity implements
             mCallback = null;
             mSplitControllerAdapter = null;
         }
+    }
+
+    @Override
+    protected void onResume() {
+        if (mSettingsGlassHelper != null) {
+            mSettingsGlassHelper.onResume();
+        }
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mSettingsGlassHelper != null) {
+            mSettingsGlassHelper.onDestroy();
+        }
+        super.onDestroy();
     }
 
     @Override
@@ -430,7 +450,9 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         if (!mIsEmbeddingActivityEnabled) {
             return;
         }
-
+        if (mSettingsGlassHelper != null && mSettingsGlassHelper.isGlassActive() && !mIsTwoPane) {
+            return;
+        }
         final Window window = getWindow();
         final int color = mIsTwoPane
                 ? getColor(R.color.settings_two_pane_background_color)
