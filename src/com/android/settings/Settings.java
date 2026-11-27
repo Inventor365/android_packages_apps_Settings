@@ -871,4 +871,7 @@ public class Settings extends SettingsActivity {
             }
         }
     }
+
+    public static class YukiVerseActivity extends SettingsActivity {}
+    public static class YukiVerseLauncherActivity extends SettingsActivity {}
 }

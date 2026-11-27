@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Neoteric OS
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="yukiverse_launcher_settings"
+    android:title="@string/yukiverse_launcher_title">
+
+    <PreferenceCategory
+        android:key="yukiverse_launcher_selection_category"
+        android:title="@string/yukiverse_launcher_selection_category_title">
+
+        <org.neoteric.preference.SystemPropListPreference
+            android:key="persist.sys.neoteric.launcher"
+            android:title="@string/yukiverse_home_launcher_title"
+            android:entries="@array/yukiverse_home_launcher_entries"
+            android:entryValues="@array/yukiverse_home_launcher_values"
+            android:defaultValue="0"
+            android:summary="%s" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="yukiverse_launcher_mods_category"
+        android:title="@string/yukiverse_launcher_mods_category_title">
+
+        <Preference
+            android:key="yukiverse_pixel_launcher_enhanced"
+            android:title="@string/yukiverse_pixel_launcher_enhanced_title"
+            android:summary="@string/yukiverse_pixel_launcher_enhanced_summary_active" />
+
+    </PreferenceCategory>
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="yukiverse_launcher_footer"
+        android:title="@string/yukiverse_launcher_footer_text"
+        android:selectable="false"
+        settings:searchable="false" />
+
+</PreferenceScreen>

@@ -394,7 +394,7 @@
 
     <!-- YukiVerse -->
     <string name="yukiverse_title">YukiVerse</string>
-    <string name="yukiverse_summary">Spoofing, privacy &amp; system tweaks</string>
+    <string name="yukiverse_summary">Spoofing, launcher, privacy &amp; system tweaks</string>
     <string name="yukiverse_system_title">System</string>
     <string name="yukiverse_system_summary">Screen capture, secure windows, app downgrade &amp; PairIP</string>
     <string name="yukiverse_privacy_category_title">Screen &amp; privacy</string>
@@ -403,4 +403,25 @@
     <string name="app_downgrade_summary">Allow installing older versions of applications. Note that this may lead to crashes and data corruption.</string>
     <string name="pairip_activity_block_title">Block PairIP license verification</string>
     <string name="pairip_activity_block_summary">Prevent Play Store apps from launching the \"Get this app from Play\" screen when not installed by the Play Store</string>
+
+    <!-- YukiVerse Launcher -->
+    <string name="yukiverse_launcher_title">Launcher</string>
+    <string name="yukiverse_launcher_summary">Switch home launcher &amp; Pixel Launcher enhancements</string>
+    <string name="yukiverse_launcher_selection_category_title">Home launcher</string>
+    <string name="yukiverse_home_launcher_title">Default system launcher</string>
+    <string name="yukiverse_home_launcher_neoteric">Neoteric Launcher</string>
+    <string name="yukiverse_home_launcher_pixel">Pixel Launcher</string>
+    <string name="yukiverse_launcher_mods_category_title">Pixel Launcher customizations</string>
+    <string name="yukiverse_pixel_launcher_enhanced_title">Pixel Launcher Enhancements</string>
+    <string name="yukiverse_pixel_launcher_enhanced_summary_active">Customize Pixel Launcher layout, icons, dock, drawer, and gestures</string>
+    <string name="yukiverse_pixel_launcher_enhanced_summary_warning">Pixel Launcher is not selected. Switch to Pixel Launcher above to apply mods.</string>
+    <string name="yukiverse_pixel_launcher_required_title">Switch to Pixel Launcher</string>
+    <string name="yukiverse_pixel_launcher_required_message">Pixel Launcher Enhancements only apply when Pixel Launcher is selected as your home launcher. Switch from Neoteric Launcher to Pixel Launcher and restart your device for modifications to take effect.</string>
+    <string name="yukiverse_switch_to_pixel_launcher">Switch to Pixel Launcher</string>
+    <string name="yukiverse_open_anyway">Open anyway</string>
+    <string name="yukiverse_launcher_restart_title">Restart required</string>
+    <string name="yukiverse_launcher_restart_message">Your device needs to restart for the new home launcher and Recents integration to take effect.</string>
+    <string name="yukiverse_launcher_restart_now">Restart now</string>
+    <string name="yukiverse_launcher_restart_later">Later</string>
+    <string name="yukiverse_launcher_footer_text">Switching between Neoteric Launcher and Pixel Launcher requires a restart so Recents, overview actions, and gesture navigation bind cleanly to the selected launcher. Pixel Launcher Enhancements apply automatically only when Pixel Launcher is active.</string>
 </resources>

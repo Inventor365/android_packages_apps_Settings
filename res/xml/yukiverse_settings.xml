@@ -25,4 +25,12 @@
         android:order="2"
         android:fragment="com.android.settings.custom.yukiverse.YukiVerseSystemSettings" />
 
+    <com.android.settingslib.widget.CardPreference
+        android:key="yukiverse_launcher_settings"
+        android:title="@string/yukiverse_launcher_title"
+        android:summary="@string/yukiverse_launcher_summary"
+        android:icon="@drawable/ic_yukiverse_launcher"
+        android:order="3"
+        android:fragment="com.android.settings.custom.yukiverse.YukiVerseLauncherSettings" />
+
 </PreferenceScreen>

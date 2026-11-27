@@ -226,6 +226,9 @@ import com.android.settings.wifi.details.WifiNetworkDetailsFragment;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2;
 import com.android.settings.wifi.tether.WifiTetherSettings;
+import com.android.settings.custom.yukiverse.YukiVerseLauncherSettings;
+import com.android.settings.custom.yukiverse.YukiVerseSettings;
+import com.android.settings.custom.yukiverse.YukiVerseSystemSettings;
 
 public class SettingsGateway {
 
@@ -442,6 +445,9 @@ public class SettingsGateway {
             SafetyCenterQsFragment.class.getName(),
             BatteryShareSettings.class.getName(),
             HeadsUpSettings.class.getName(),
+            YukiVerseSettings.class.getName(),
+            YukiVerseSystemSettings.class.getName(),
+            YukiVerseLauncherSettings.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -491,5 +497,7 @@ public class SettingsGateway {
             Settings.ShadeSettingsActivity.class.getName(),
             Settings.BatteryShareSettingsActivity.class.getName(),
             Settings.HeadsUpSettingsActivity.class.getName(),
+            Settings.YukiVerseActivity.class.getName(),
+            Settings.YukiVerseLauncherActivity.class.getName(),
     };
 }

@@ -6430,5 +6430,36 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
                        android:value="com.android.settings.fuelgauge.BatteryShareSettings"/>
         </activity>
 
+        <!-- YukiVerse -->
+        <activity android:name=".Settings$YukiVerseActivity"
+            android:label="@string/yukiverse_title"
+            android:taskAffinity="com.android.settings"
+            android:exported="true"
+            android:parentActivityName="Settings">
+            <intent-filter android:priority="1">
+                <action android:name="org.neoteric.settings.action.YUKIVERSE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.custom.yukiverse.YukiVerseSettings" />
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
+                android:value="true" />
+        </activity>
+
+        <activity android:name=".Settings$YukiVerseLauncherActivity"
+            android:label="@string/yukiverse_launcher_title"
+            android:taskAffinity="com.android.settings"
+            android:exported="true"
+            android:parentActivityName="Settings">
+            <intent-filter android:priority="1">
+                <action android:name="org.neoteric.settings.action.LAUNCHER_SWITCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.custom.yukiverse.YukiVerseLauncherSettings" />
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
+                android:value="true" />
+        </activity>
+
     </application>
 </manifest>
