@@ -36,9 +36,17 @@ public class YukiVerseLauncherSettings extends DashboardFragment
     private static final String KEY_MODS_CATEGORY = "yukiverse_launcher_mods_category";
     private static final String KEY_PIXEL_LAUNCHER_ENHANCED = "yukiverse_pixel_launcher_enhanced";
     private static final String PLE_PACKAGE = "com.drdisagree.pixellauncherenhanced";
+    private static final String KEY_BLUR_CATEGORY = "yukiverse_blur_category";
+    private static final String[] PIXEL_BLUR_KEYS = new String[] {
+        "yuki_glass_recents_mode",
+        "yuki_glass_recents_radius",
+        "yuki_glass_drawer_mode",
+        "yuki_glass_drawer_radius",
+    };
 
     private ListPreference mLauncherPref;
     private Preference mPixelLauncherEnhancedPref;
+    private PreferenceCategory mBlurCategory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,12 +98,25 @@ public class YukiVerseLauncherSettings extends DashboardFragment
                 updateEnhancedSummary(activeLauncher);
             }
         }
+
+        mBlurCategory = findPreference(KEY_BLUR_CATEGORY);
+        if (!pixelShipped && mBlurCategory != null) {
+            for (String key : PIXEL_BLUR_KEYS) {
+                Preference p = mBlurCategory.findPreference(key);
+                if (p != null) {
+                    mBlurCategory.removePreference(p);
+                }
+            }
+        }
+        updatePixelBlurHints(activeLauncher);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        updateEnhancedSummary(HomeLauncherUtils.getActiveLauncherIndex());
+        int activeLauncher = HomeLauncherUtils.getActiveLauncherIndex();
+        updateEnhancedSummary(activeLauncher);
+        updatePixelBlurHints(activeLauncher);
     }
 
     @Override
@@ -103,6 +124,7 @@ public class YukiVerseLauncherSettings extends DashboardFragment
         if (preference == mLauncherPref) {
             int value = Integer.parseInt((String) newValue);
             updateEnhancedSummary(value);
+            updatePixelBlurHints(value);
             showRebootDialog();
             return true;
         }
@@ -126,6 +148,19 @@ public class YukiVerseLauncherSettings extends DashboardFragment
         mPixelLauncherEnhancedPref.setSummary(pixelSelected
                 ? R.string.yukiverse_pixel_launcher_enhanced_summary_active
                 : R.string.yukiverse_pixel_launcher_enhanced_summary_warning);
+    }
+
+    private void updatePixelBlurHints(int launcherIndex) {
+        if (mBlurCategory == null) {
+            return;
+        }
+        boolean pixelSelected = launcherIndex == HomeLauncherUtils.LAUNCHER_PIXEL;
+        for (String key : PIXEL_BLUR_KEYS) {
+            Preference p = mBlurCategory.findPreference(key);
+            if (p != null && !(p instanceof ListPreference)) {
+                p.setSummary(pixelSelected ? null : getString(R.string.yukiverse_blur_pixel_only_note));
+            }
+        }
     }
 
     private void handlePixelLauncherEnhancedClick() {

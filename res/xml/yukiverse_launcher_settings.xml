@@ -5,7 +5,8 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:key="yukiverse_launcher_settings"
     android:title="@string/yukiverse_launcher_title">
 
@@ -24,6 +25,157 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="yukiverse_blur_category"
+        android:title="@string/yukiverse_blur_category_title">
+
+        <org.neoteric.preference.SecureSettingSwitchPreference
+            android:key="yuki_glass_enabled"
+            android:title="@string/yukiverse_blur_enabled_title"
+            android:summary="@string/yukiverse_blur_enabled_summary"
+            android:defaultValue="false" />
+
+        <org.neoteric.preference.SecureSettingListPreference
+            android:key="yuki_glass_style"
+            android:title="@string/yukiverse_blur_style_title"
+            android:entries="@array/yukiverse_blur_style_entries"
+            android:entryValues="@array/yukiverse_blur_style_values"
+            android:defaultValue="3"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingSeekBarPreference
+            android:key="yuki_glass_intensity"
+            android:title="@string/yukiverse_blur_intensity_title"
+            android:defaultValue="100"
+            settings:min="0"
+            settings:max="200"
+            settings:interval="5"
+            settings:units="@string/unit_percent"
+            settings:continuousUpdates="true"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingListPreference
+            android:key="yuki_glass_qs_mode"
+            android:title="@string/yukiverse_blur_qs_mode_title"
+            android:entries="@array/yukiverse_blur_surface_entries"
+            android:entryValues="@array/yukiverse_blur_surface_values"
+            android:defaultValue="-1"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingSwitchPreference
+            android:key="yuki_glass_qs_tiles"
+            android:title="@string/yukiverse_blur_qs_tiles_title"
+            android:summary="@string/yukiverse_blur_qs_tiles_summary"
+            android:defaultValue="true"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingListPreference
+            android:key="yuki_glass_shade_mode"
+            android:title="@string/yukiverse_blur_shade_mode_title"
+            android:entries="@array/yukiverse_blur_surface_entries"
+            android:entryValues="@array/yukiverse_blur_surface_values"
+            android:defaultValue="-1"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingSwitchPreference
+            android:key="yuki_glass_notif_cards"
+            android:title="@string/yukiverse_blur_notif_cards_title"
+            android:summary="@string/yukiverse_blur_notif_cards_summary"
+            android:defaultValue="true"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingListPreference
+            android:key="yuki_glass_settings_mode"
+            android:title="@string/yukiverse_blur_settings_mode_title"
+            android:entries="@array/yukiverse_blur_surface_entries"
+            android:entryValues="@array/yukiverse_blur_surface_values"
+            android:defaultValue="-1"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingListPreference
+            android:key="yuki_glass_recents_mode"
+            android:title="@string/yukiverse_blur_recents_mode_title"
+            android:entries="@array/yukiverse_blur_surface_entries"
+            android:entryValues="@array/yukiverse_blur_surface_values"
+            android:defaultValue="-1"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingSeekBarPreference
+            android:key="yuki_glass_recents_radius"
+            android:title="@string/yukiverse_blur_recents_radius_title"
+            android:defaultValue="34"
+            settings:min="0"
+            settings:max="120"
+            settings:interval="2"
+            settings:units="@string/unit_dp"
+            settings:continuousUpdates="true"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingListPreference
+            android:key="yuki_glass_drawer_mode"
+            android:title="@string/yukiverse_blur_drawer_mode_title"
+            android:entries="@array/yukiverse_blur_surface_entries"
+            android:entryValues="@array/yukiverse_blur_surface_values"
+            android:defaultValue="-1"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingSeekBarPreference
+            android:key="yuki_glass_drawer_radius"
+            android:title="@string/yukiverse_blur_drawer_radius_title"
+            android:defaultValue="34"
+            settings:min="0"
+            settings:max="120"
+            settings:interval="2"
+            settings:units="@string/unit_dp"
+            settings:continuousUpdates="true"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingSeekBarPreference
+            android:key="yuki_glass_frost"
+            android:title="@string/yukiverse_blur_frost_title"
+            android:defaultValue="50"
+            settings:min="0"
+            settings:max="100"
+            settings:interval="5"
+            settings:units="@string/unit_percent"
+            settings:continuousUpdates="true"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingSeekBarPreference
+            android:key="yuki_glass_refraction"
+            android:title="@string/yukiverse_blur_refraction_title"
+            android:defaultValue="60"
+            settings:min="0"
+            settings:max="100"
+            settings:interval="5"
+            settings:units="@string/unit_percent"
+            settings:continuousUpdates="true"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingSeekBarPreference
+            android:key="yuki_glass_dispersion"
+            android:title="@string/yukiverse_blur_dispersion_title"
+            android:defaultValue="60"
+            settings:min="0"
+            settings:max="100"
+            settings:interval="5"
+            settings:units="@string/unit_percent"
+            settings:continuousUpdates="true"
+            android:dependency="yuki_glass_enabled" />
+
+        <org.neoteric.preference.SecureSettingSeekBarPreference
+            android:key="yuki_glass_rim"
+            android:title="@string/yukiverse_blur_rim_title"
+            android:defaultValue="80"
+            settings:min="0"
+            settings:max="100"
+            settings:interval="5"
+            settings:units="@string/unit_percent"
+            settings:continuousUpdates="true"
+            android:dependency="yuki_glass_enabled" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="yukiverse_launcher_mods_category"
         android:title="@string/yukiverse_launcher_mods_category_title">
 
@@ -38,6 +190,6 @@
         android:key="yukiverse_launcher_footer"
         android:title="@string/yukiverse_launcher_footer_text"
         android:selectable="false"
-        settings:searchable="false" />
+        app:searchable="false" />
 
 </PreferenceScreen>

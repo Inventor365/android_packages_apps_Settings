@@ -423,5 +423,35 @@
     <string name="yukiverse_launcher_restart_message">Your device needs to restart for the new home launcher and Recents integration to take effect.</string>
     <string name="yukiverse_launcher_restart_now">Restart now</string>
     <string name="yukiverse_launcher_restart_later">Later</string>
-    <string name="yukiverse_launcher_footer_text">Switching between Neoteric Launcher and Pixel Launcher requires a restart so Recents, overview actions, and gesture navigation bind cleanly to the selected launcher. Pixel Launcher Enhancements apply automatically only when Pixel Launcher is active.</string>
+    <string name="yukiverse_launcher_footer_text">Switching between Neoteric Launcher and Pixel Launcher requires a restart so Recents, overview actions, and gesture navigation bind cleanly to the selected launcher. Blur &amp; glass effects are disabled by default to preserve the stock Neoteric appearance and apply immediately when toggled.</string>
+
+    <!-- YukiVerse Launcher Blur & Glass -->
+    <string name="yukiverse_blur_category_title">Blur &amp; glass effects</string>
+    <string name="yukiverse_blur_enabled_title">Enable blur &amp; glass</string>
+    <string name="yukiverse_blur_enabled_summary">Off by default for stock Neoteric look; enable to apply blur, Frosted, or Liquid Glass across QS, shade, Settings, and launcher</string>
+    <string name="yukiverse_blur_style_title">Global blur style</string>
+    <string name="yukiverse_blur_style_off">Off (stock opaque)</string>
+    <string name="yukiverse_blur_style_standard">Standard Blur</string>
+    <string name="yukiverse_blur_style_frosted">Frosted Blur (ColorOS)</string>
+    <string name="yukiverse_blur_style_liquid">Liquid Glass</string>
+    <string name="yukiverse_blur_style_follow">Follow global style</string>
+    <string name="yukiverse_blur_intensity_title">Global blur intensity</string>
+    <string name="yukiverse_blur_qs_mode_title">Quick Settings blur style</string>
+    <string name="yukiverse_blur_qs_tiles_title">QS tile glass &amp; blur</string>
+    <string name="yukiverse_blur_qs_tiles_summary">Apply Frosted or Liquid Glass slabs to Quick Settings tiles</string>
+    <string name="yukiverse_blur_shade_mode_title">Notification shade blur style</string>
+    <string name="yukiverse_blur_notif_cards_title">Notification card glass</string>
+    <string name="yukiverse_blur_notif_cards_summary">Apply Frosted or Liquid Glass tinting to notification cards</string>
+    <string name="yukiverse_blur_settings_mode_title">Settings UI blur style</string>
+    <string name="yukiverse_blur_recents_mode_title">Pixel Launcher Recents blur</string>
+    <string name="yukiverse_blur_recents_radius_title">Pixel Launcher Recents blur radius</string>
+    <string name="yukiverse_blur_drawer_mode_title">Pixel Launcher App Drawer blur</string>
+    <string name="yukiverse_blur_drawer_radius_title">Pixel Launcher App Drawer blur radius</string>
+    <string name="yukiverse_blur_pixel_only_note">Requires Pixel Launcher selected above</string>
+    <string name="yukiverse_blur_frost_title">Frosted glaze opacity</string>
+    <string name="yukiverse_blur_refraction_title">Liquid refraction strength</string>
+    <string name="yukiverse_blur_dispersion_title">Chromatic dispersion</string>
+    <string name="yukiverse_blur_rim_title">Rim specular highlight</string>
+    <string name="unit_percent">%</string>
+    <string name="unit_dp">dp</string>
 </resources>
