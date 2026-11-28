@@ -236,9 +236,18 @@ public final class SettingsGlassHelper {
         setViewBgIfPresent(R.id.content_parent, color);
         setViewBgIfPresent(R.id.app_bar_container, color);
         setViewBgIfPresent(R.id.app_bar, color);
+        setViewBgIfPresent(R.id.action_bar, color);
         setViewBgIfPresent(com.android.settingslib.collapsingtoolbar.R.id.collapsing_toolbar, color);
         setViewBgIfPresent(R.id.settings_homepage_container, color);
         setViewBgIfPresent(R.id.main_content, color);
+        View ctl = mActivity.findViewById(
+                com.android.settingslib.collapsingtoolbar.R.id.collapsing_toolbar);
+        if (ctl instanceof com.google.android.material.appbar.CollapsingToolbarLayout) {
+            com.google.android.material.appbar.CollapsingToolbarLayout collapsing =
+                    (com.google.android.material.appbar.CollapsingToolbarLayout) ctl;
+            collapsing.setContentScrimColor(color);
+            collapsing.setStatusBarScrimColor(color);
+        }
     }
 
     private void setViewBgIfPresent(int id, int color) {
